@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciador de Posts - Vila Gastro Jerusalém</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📊 Gerenciador de Posts - Vila Gastro Jerusalém</h1>
+
+  <!-- Formulário para adicionar lojas -->
+  <div class="form">
+    <input type="text" id="storeName" placeholder="Nome da Loja">
+    <button class="add-btn" onclick="addStore()">Adicionar Loja</button>
+  </div>
+
+  <!-- Campo de busca -->
+  <div class="form">
+    <input type="text" id="searchInput" placeholder="Buscar loja..." onkeyup="searchStore()">
+  </div>
+
+  <!-- Tabela de lojas -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Loja</th>
+          <th>Posts da Semana</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="storeList"></tbody>
+    </table>
+  </div>
+
+  <!-- Totais -->
+  <div id="summary" class="summary"></div>
+
+  <!-- Botões extras -->
+  <div class="actions">
+    <button class="reset-btn" onclick="resetWeek()">Resetar Semana</button>
+    <button class="export-btn" onclick="exportData()">Exportar Dados</button>
+    <input type="file" id="importFile" onchange="importData(event)" hidden>
+    <button class="import-btn" onclick="document.getElementById('importFile').click()">Importar Dados</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
